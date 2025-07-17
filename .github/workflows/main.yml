@@ -1,20 +1,20 @@
+    
 name: First Workflow
 
 on:
   push:
-      branches:
-        - main
-jobs:
-  example-jobs:
-      runs-on: ubunto test
-      steps:
-        - name: print a welcome message
-          run:  echo "Welcome to first github Action workflow"
-        - name: checkout rerpo  
-          uses: actions/checkout@v4.2.2
+    branches:
+      - main
 
-        - name: list of repo files
-        -  run: ls -la 
-            
-        
-    
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print a welcome message
+        run: echo "Welcome to first GitHub Action workflow"
+
+      - name: checkout repo  
+        uses: actions/checkout@v4.2.2
+
+      - name: list of repo files
+        run: ls -la
